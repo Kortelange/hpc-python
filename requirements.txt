@@ -1,7 +1,7 @@
 numpy
 mpi4py 
-matplotlib==2.2.4
+matplotlib
 cython
 cffi
 numexpr
-ipython==7.16.3
+ipython
