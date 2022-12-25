@@ -5,3 +5,4 @@ cython
 cffi
 numexpr
 ipython
+numba
