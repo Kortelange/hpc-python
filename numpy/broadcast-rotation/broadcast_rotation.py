@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 points = np.loadtxt('points_circle.dat')
 
-theta = 90
+theta = np.pi/2
 
 # We flip the matrix and do the transposed multiplication
 M = np.array([[np.cos(theta), np.sin(theta)],
