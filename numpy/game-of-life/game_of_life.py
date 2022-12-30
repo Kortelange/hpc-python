@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+import matplotlib.animation as animation
 
 class GOL:
     #square game of life
@@ -12,6 +12,8 @@ class GOL:
             self.board = board
             self.size = board.shape[0]
         self.reset_neighbors()
+        self.im = None
+        self.anim = None
 
     def reset_neighbors(self):
         self.neighbors = np.zeros_like(self.board)
@@ -70,17 +72,27 @@ class GOL:
         if i == maxiterations - 1:
             print('Solution is not complete')
 
-    # def animate
+    def animate(self, i):
+        gol.update()
+        self.im.set_data(gol.board)
+        return self.im
+
+    def create_animation(self, max_iterations=50):
+        fig, (axl, axr) = plt.subplots(ncols=2)
+        axl.imshow(self.board)
+        self.im = axr.imshow(self.board)
+        self.anim = animation.FuncAnimation(fig, self.animate, frames=max_iterations, interval=10)
+
+    def play_animation(self, max_iterations=50):
+        if not self.anim:
+            self.create_animation(max_iterations)
+        plt.show()
+
 
 
 board = np.zeros((32, 32))
 board[15, :] = 1
 board[:, 15] = 1
-gol = GOL(size=32)
-plt.subplot(1,2,1)
-plt.imshow(gol.board)
+gol = GOL(size=32, board=board)
 
-gol.play()
-plt.subplot(1,2,2)
-plt.imshow(gol.board)
-plt.show()
+gol.play_animation(100)
