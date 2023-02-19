@@ -81,7 +81,7 @@ def iterate(field, local_field, local_field0, timesteps, image_interval):
 def main():
     # Read and scatter the initial temperature field
     if rank == 0:
-        field, field0 = init_fields('../heat-equation/bottle_large.dat')
+        field, field0 = init_fields('../heat-equation/bottle.dat')
         shape = field.shape
         dtype = field.dtype
         # TODO: send the shape and dtype to everyone else

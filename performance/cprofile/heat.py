@@ -2,13 +2,13 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from numba import jit
+# from numba import jit
 
 # Set the colormap
 plt.rcParams['image.cmap'] = 'BrBG'
 
 
-@jit
+# @jit
 def evolve(u, u_previous, a, dt, dx2, dy2):
     """Explicit time evolution.
        u:            new temperature field

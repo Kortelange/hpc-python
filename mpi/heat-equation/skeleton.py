@@ -38,6 +38,7 @@ down = (rank + 1) % ntasks
 # TODO: if at the edge of the grid, use MPI.PROC_NULL
 down = down if down else MPI.PROC_NULL
 
+
 def evolve(u, u_previous, a, dt, dx2, dy2):
     """Explicit time evolution.
        u:            new temperature field
@@ -60,6 +61,7 @@ def init_fields(filename):
     field = np.loadtxt(filename)
     field0 = field.copy()  # Array for field of previous time step
     return field, field0
+
 
 def write_field(field, step):
     plt.gca().clear()

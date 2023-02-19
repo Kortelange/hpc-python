@@ -93,6 +93,6 @@ class GOL:
 board = np.zeros((32, 32))
 board[15, :] = 1
 board[:, 15] = 1
-gol = GOL(size=32, board=board)
+gol = GOL(size=45)
 
 gol.play_animation(100)

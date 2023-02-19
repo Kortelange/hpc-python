@@ -1,4 +1,4 @@
-import numpy as np
+ import numpy as np
 
 # Generate N element long random character array from given alphabet
 def generate_string(N, alphabet='ACGT'):

@@ -8,6 +8,7 @@ import cython
 # Set the colormap
 plt.rcParams['image.cmap'] = 'BrBG'
 
+# add this line if to include in profile @cython.profile(True)
 @cython.boundscheck(False)
 @cython.boundscheck(False)
 @cython.cdivision(True)
